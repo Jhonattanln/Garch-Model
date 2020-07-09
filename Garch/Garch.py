@@ -8,7 +8,7 @@ df = pd.read_excel(r'C:\Users\Jhona\OneDrive\Área de Trabalho\Atualizado.xlsx',
 returns = df['CPLE6'].pct_change()*100
 
 #####Especificar o modelo garch
-basic_gm = arch_model(returns[1:], p=1, q=1, mean='constant', vol='GARCH', dist='normal')
+basic_gm = arch_model(returns[1:], p=1, q=1, mean='constant', vol='GARCH', dist='skewt')
 gm_result = basic_gm.fit()
 
 ####Display model
